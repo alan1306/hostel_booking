@@ -1,0 +1,472 @@
+body{
+    
+    color:black;
+    font-family:montserrat;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    
+    
+}
+.loader{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 9999;
+    background:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.loader .loading{
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top: 10px solid #e74c3c;
+    position: relative;
+    animation: a1 2s linear infinite;
+  }
+  
+.loader .loading::before,.loader .loading::after{
+    content: '';
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
+  
+.loader .loading::before{
+    border-top: 10px solid #e67e22;
+    transform: rotate(120deg);
+  }
+  
+.loader .loading::after{
+    border-top: 10px solid #3498db;
+    transform: rotate(240deg);
+  }
+  
+.loader .loading span{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color: black;
+    text-align: center;
+    line-height: 200px;
+    animation: a2 2s linear infinite;
+  }
+  .loader.hidden{
+      animation: fadeOut 4s;
+      animation-fill-mode: forwards;
+  }
+@keyframes a1 {
+    to{
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes a2 {
+    to{
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes fadeOut{
+      100%{
+          opacity:0;
+          visibility: hidden;
+      }
+  }
+#myDiv{
+    display: none;
+    text-align: center;
+  }
+nav{
+    background:#0082e6;
+    height:80px;
+    width:100%;
+    position: relative;
+    padding-right:20px;
+    
+}
+nav img.logo{
+    
+    line-height: 80px;
+    padding-left:100px;
+    width:250px;
+    height: 100px;
+    float: left;
+    
+}
+
+nav ul{
+    float:right;
+    margin-right:20px;
+
+}
+nav ul li{
+    display:inline-block;
+    line-height: 80px;
+    margin:0 5px;
+
+}
+nav ul li a{
+    color:white;
+    font-size:17px;
+    padding:7px 13px;
+    border-radius:3px;
+    text-transform: uppercase;
+}
+nav ul li a.active,
+    nav ul li a.hover{
+        background: #1b9bff;
+        transition:.5s;
+    }
+
+header{
+    background: black;
+    background-image: url('CUSAT.jpg');
+    width: 100%;;
+    background-size: 100%;
+    background-position: center;
+    padding:20px;
+    height:400px;
+   text-align: center;
+   
+   
+
+}
+header:hover
+{opacity: .6;
+filter: blur(.5px);}
+header div{
+    align-content: center;
+    padding:150px 25px 25px 25px;
+}
+header a{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+header div a{
+    display: inline-block !important;
+    margin: 10px;
+    padding: 13px 35px 13px 35px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #1e9e6b;
+}
+
+.team{
+    padding:1rem 1rem;
+    background-color: white;
+    height: 700px;
+    position: relative;
+    width:100%;
+
+}
+.heading{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    margin-bottom: 2rem;
+    text-align:center;
+    color:#333;
+    position:relative;
+}
+.heading::after{
+    content: "";
+    width:20rem;
+    height:.2rem;
+    background-color: #45e19f;
+    position:absolute;
+    bottom:-0.5rem;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:2rem;
+
+}
+.card-wrapper{
+    display:flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+
+}
+.card{
+    width:21rem;
+    height:35rem;
+    background-color:#ebeef8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:0.5em ;
+    box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+    
+
+}
+.card .card-img{
+    width:100%;
+    height:10rem;
+    object-fit:cover;
+    -webkit-clip-path: polygon(0 0, 100% 0,10% 78%,0 100%);
+    clip-path: polygon(0 0,100% 0,100% 78%,0% 100%);
+
+}
+.profile-img{
+    width:8rem;
+    height:9rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -5rem;
+    z-index: 999;
+    border: 1px solid#ebeef8;
+}
+.card h1{
+    font-size:2rem;
+    color:#333;
+    margin:.5rem;
+
+}
+.job-title{
+    color:#777;
+    font-size: 1rem;
+    font-weight:300;
+
+}
+.about{
+    font-size: .5rem;
+    margin:.2rem,0;
+    font-style: italic;
+    text-align: center;
+    color:#333;
+
+}
+.social-media{
+    width:100%;
+    list-style:none;
+    display:flex;
+    justify-content: space-evenly;
+    padding-top:0.1rem;
+    
+    border-top:1px solid rgba(0,0,0,0.1);
+}
+.social-media i{
+    font-size: 2rem;
+
+}
+.fa-twitter-square{
+    color:#3b5999;
+}
+.fa-instagram-square{
+    color:#e6683c;
+}
+.fa-facebook-square{
+    color:#3b5999;
+}
+.fa-google-plus-square{
+    color:#dd4b39;
+}
+
+.testimonials{
+	
+	background-color: #000000;
+	
+    width: 100%;
+    height: 500px;
+    padding:20px;
+    position: relative;
+}
+
+.testimonials .container{
+	max-width: 1170px;
+	margin: auto;
+}
+.testimonials .title{
+	margin-bottom:60px
+}
+.testimonials .title h1{
+	text-align: center;
+	color:#ffffff;
+	text-transform: uppercase;
+	font-size: 36px;
+	margin:0;
+}
+
+.testimonials .slider{
+ border:1px solid #333333;
+ max-width: 600px;
+ margin: auto;
+ text-align: center;
+ padding:30px;
+}
+.testimonials .slider .slide{
+	display: none;
+}
+.testimonials .slider .slide.active{
+	
+	display: block;
+	animation: slide 1s ease;
+}
+@keyframes slide{
+	0%{
+		opacity:0;
+		transform: translateX(-15px);
+	}
+	100%{
+	   opacity:1;
+		transform: translateX(0px);	
+	}
+}
+.testimonials .slider p{
+	font-size:18px;
+	color:#ffffff;
+	word-spacing: 2px;
+}
+.testimonials .slider .client-info h3{
+	font-weight: bold;
+	color:#fff;
+	font-size:18px;
+	margin:30px 0 10px;
+}
+.testimonials .slider .client-info span{
+	display: block;
+	font-size:16px;
+	color:#11bead;
+}
+.testimonials .slider-indicator{
+	text-align: center;
+	padding:30px;
+}
+.testimonials .slider-indicator img{
+	max-height:80px;
+	max-width:100px;
+	border-radius:50%;
+	display: inline-block;
+	margin:0 8px;
+	opacity:0.2;
+	border:4px solid #fff;
+	cursor: pointer;
+	transition: opacity 1s ease;
+}
+.testimonials .slider-indicator img.active{
+	opacity:1;
+}
+
+
+.footer{
+    background:#303036;
+    color:#d3d3d3;
+    height:400px;
+    position: relative;
+    width:100%;
+    padding:20px;
+    
+}
+.footer .footer-content{
+    
+    height:350px;
+    display: flex;
+}
+.footer .footer-content .footer-section{
+    flex: 1;
+    padding:25px;
+    
+
+}
+.footer .footer-content h1,
+.footer .footer-content h2{
+    color:white;
+}
+.footer .footer-content .about img{
+    height:100px;
+    width: 100px;
+}
+.footer .footer-content .about p{
+    color:white;
+    font-size: 2em;
+}
+
+.footer .footer-content .about .contact span{
+    display: block;
+    font-size:1.5em;
+    margin-bottom: 8px;
+    color: gray;
+}
+.footer .footer-content .about .socials a{
+    border:1px solid gray;
+    color:gray;
+    width:45px;
+    height:37px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-align:center;
+    display:inline-block;
+    font-size: 2.5em;
+    border-radius: 5px;
+}
+.footer .footer-content .about .socials a:hover {
+    border:1px solid white;
+    color:white;
+    transition:all .3s;
+
+}
+.footer .footer-content .links ul a{
+    display: block;
+    color: gray;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+.footer .footer-content .links ul a:hover{
+    color:white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+.footer .footer-content .contact-form .contact-input {
+    background:#272727;
+    color:bebdbd;
+    margin-bottom:10px ;
+    line-height: 1.5rem;
+    padding: .9em 1.4rem;
+    border:none;
+
+}
+.footer .footer-content .contact-form input,
+.footer .footer-content .contact-form textarea{
+    width: 500px;
+}
+.footer .footer-content .contact-form button{
+    padding: .7rem 1.3rem;
+    line-height: 1.3rem;
+    background:seagreen;
+    float: right;
+}
+.footer .footer-bottom{
+    background-color: #343a40;
+    color:#686868;
+    height:50px;
+    width:100%;
+    text-align:center;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    padding-top:20px;
+}
+
+@media screen and (max-width:800px)
+{
+    .features{
+        background:red;
+    }
+}
